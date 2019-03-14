@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+// Set your brand colors
+$blue: #0076BF;
+$blue-light: #EBF4FD;
+$red: #FF2021;
+$white: #FFFFFF;
+$grey-light: #F1F1F1;
+$grey-medium: #C8C8C8;
+$grey-dark: #7D8990;
+$grey-super-dark: #262626;
+$green: #08D500;
+
+// Update Bulma's global variables
+$family-sans-serif: "Lato", sans-serif;
+$grey-dark: $grey-dark;
+$grey-light: $grey-light;
+$primary: $blue;
+$link: $red;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: $white;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// Import only what you need from Bulma
+@import "../../../node_modules/bulma/bulma.sass";
+
+// Import Dashboard CSS
+@import "body.scss";

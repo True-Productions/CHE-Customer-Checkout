@@ -1,0 +1,38 @@
+{
+  "name": "che-customer-checkout",
+  "version": "1.0.0",
+  "description": "The Customer Side HTML5/CSS3/JS build. Uses Vue.JS and Bulma.",
+  "main": "site.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css-build": "node-sass --omit-source-map-url assets/css/lib/style.scss assets/css/dist/style.css",
+    "css-watch": "npm run css-build --watch",
+    "start": "npm run css-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/True-Productions/CHE-Customer-Checkout.git"
+  },
+  "keywords": [
+    "chicago",
+    "helicopter",
+    "experience",
+    "che",
+    "call",
+    "center",
+    "dashboard"
+  ],
+  "author": "True Productions",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/True-Productions/CHE-Customer-Checkout/issues"
+  },
+  "homepage": "https://github.com/True-Productions/CHE-Customer-Checkout#readme",
+  "devDependencies": {
+    "bulma": "^0.7.4",
+    "node-sass": "^4.11.0",
+    "vpm": "0.0.3",
+    "vue": "^2.6.8",
+    "webpack": "^4.29.6"
+  }
+}
