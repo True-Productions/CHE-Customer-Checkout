@@ -1,0 +1,139 @@
+// Colors
+$blue: #0076BF;
+$blue-light: #EBF4FD;
+$red: #FF2021;
+$white: #FFFFFF;
+$grey-light: #F1F1F1;
+$grey-medium: #C8C8C8;
+$grey-dark: #7D8990;
+$grey-super-dark: #262626;
+$green: #08D500;
+$beige: #F5EBB7;
+
+html,body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: $blue-light;
+
+    h1,h2,h3,h4,h5,h6 {
+        margin-bottom: 15px;
+    }
+}
+
+#content {
+    padding: 0;
+
+    .btn {
+        border: 0;
+        margin-left: 10px;
+    }
+
+    .steps {
+        color: $blue;
+        text-transform: uppercase;
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 0;
+            background: none;
+            padding: 0;
+            margin: 0;
+            text-align: inherit;
+            border-radius: 0;
+            line-height: normal;
+            vertical-align: inherit;
+            min-width: auto;
+            max-height: 3.5rem;
+
+            .number {
+                font-size: 1.5em;
+                background: none;
+                padding: 0;
+                margin: 0;
+                text-align: inherit;
+                border-radius: 0;
+                line-height: normal;
+                vertical-align: inherit;
+                min-width: auto;
+            }
+        }
+        h2::first-letter {
+            font-size: 1.5em;
+        }
+        #title, #disclaimer {
+            margin-top: auto;
+        }
+        #disclaimer {
+            .disclaimer {
+                color: $blue;
+                text-transform: none;
+                font-weight: bold;
+            }
+        }
+
+        #inner-content {
+            padding: 25px;
+            border: 2px solid rgba(18,18,18,.25);
+            border-radius: 10px;
+            background-color: $white;
+
+            .inner-section {
+                margin-bottom: 25px;
+            }
+            .inner-section:last-child {
+                margin-bottom: 0;
+            }
+
+            h3 {
+                text-transform: capitalize;
+            }
+
+            .input {
+                margin-bottom: 15px;
+                border-color: $grey-dark;
+            }
+            .input:last-child {
+                margin-bottom: 0;
+            }
+            .input:required {
+                border-color: $red;
+            }
+            .input::placeholder {
+                color: $grey-dark;
+            }
+
+            #add {
+                .btn {
+                    background-color: $grey-dark;
+                    color: $white;
+                    font-size: 24px;
+                    border-radius: 5px;
+                    padding: 2px 10px;
+                }
+            }
+        }
+    }
+
+    #step1 {
+        .columns:nth-child(2) {
+            margin-bottom: 0;
+        }
+    }
+
+    #confirm {
+        text-align: center;
+
+        .btn {
+            background-color: $blue;
+            color: $white;
+            padding: 15px 50px;
+            line-height: 1.5;
+            border-radius: 6px;
+            border: none;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+    }
+}

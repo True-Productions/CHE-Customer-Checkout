@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "css-build": "node-sass --omit-source-map-url assets/css/lib/style.scss assets/css/dist/style.css",
-    "css-watch": "npm run css-build --watch",
+    "css-watch": "npm run css-build -- --watch",
     "start": "npm run css-watch"
   },
   "repository": {
