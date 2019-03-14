@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicago Helicopter Experience Reservation</title>
+
+    <script src="js/vue-dev.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/js-datepicker/dist/datepicker.min.css">
+    <script src="https://unpkg.com/js-datepicker"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<header>
+		<img src='images/light-logo.png'>
+	</header>
+
+    <div class='content'>
+        <h2>Helicopter Reservations</h2>
+    
+        <div id='reservation-app'>
+
+            <errorsection
+                v-for='error in errors'
+                v-bind:error='error.msg'
+                v-bind:key='error.id'
+            ></errorsection>
+            
+            <passenger-total
+                v-bind:total_passengers='total_passengers'
+                v-on:update_passenger_total='update_passenger_total'
+            ></passenger-total>
+        
+            <calendar-picker
+                v-on:update_calendar='update_calendar'
+                v-bind:saved_date='date'
+            ></calendar-picker>
+
+            <chosen-date
+                v-if="currentStep > 1"
+                v-bind:date="date"
+                v-on:next_day='next_day'
+                v-on:prev_day='prev_day'
+            ></chosen-date>
+
+            <no-flights
+                v-if='no_flights == true'
+            ></no-flights>
+
+            <div class='flightTimes'>
+                <flight-times
+                    v-if="currentStep > 1"
+                    v-for="(time, key) in availableFlights"
+                    v-bind:key="key"
+                    v-bind:time="time"
+                    v-bind:selected_flight="selectedFlight"
+                    v-on:select_time='select_time'
+                ></flight-times>
+            </div>
+        
+            <customer-info
+                v-if='currentStep > 2'
+                v-on:update_customer='update_customer'
+                v-bind:first_nameprop='customerData.firstName'
+                v-bind:last_nameprop='customerData.lastName'
+                v-bind:phoneprop='customerData.phone'
+                v-bind:emailprop='customerData.email'
+                v-bind:weightprop='customerData.weight'
+            ></customer-info>
+        
+            <!--v-if="pass > 1 && currentStep > 2"-->
+            <passenger-info
+                v-for="passenger, key in renderedPassengers"
+                v-if="key > 1 && currentStep > 2"
+                v-bind:key="key"
+                v-bind:passid="key"
+                v-bind:pass='passenger'
+                v-bind:nameprop='passenger.name'
+                v-bind:weightprop='passenger.weight'
+                v-on:update_passenger='update_passenger'
+            ></passenger-info>
+
+            <bookbutton
+                v-if='currentStep > 2'
+                v-bind:bookable='bookable'
+                v-on:book='bookflight'
+            ></bookbutton>        
+            
+        </div>
+    </div>
+    <footer>
+        <div class='copyright'>
+            Copyright <span id='copyrightDate'></span>
+        </div>
+    </footer>
+
+    <script>
+        let year = new Date().getFullYear();
+        document.getElementById('copyrightDate').innerText = year;
+    </script>
+
+    <template id='errorsection'>
+        <div class='errorMessage'>
+            {{error}}
+        </div>
+    </template>
+
+    <template id='passenger-total'>
+        <div class='passengerTotal'>
+            <div class='passengerDisplay'>
+                {{ total_passengers }}
+                <span v-if='total_passengers > 1'>Passengers</span>
+                <span v-else>Passenger</span>
+            </div>
+            <div class='buttons'>
+                <button v-on:click='decrease_total'>-</button>
+                <button v-on:click='increase_total'>+</button>
+            </div>
+        </div>
+    </template>
+
+    <template id='calendar-picker'>
+        <div class='calendarPicker'>
+            <label>Pick a Date</label>
+            <input type="text" name='date' v-model='date'  id='datePicker' v-on:input="update_calendar" />
+        </div>
+    </template>
+
+    <template id='chosen-date'>
+        <div class='chosenDate'>
+            <div class="arrowContainer left" v-on:click="prev_day">
+                <img class="arrow left" src="images/right-arrow.svg">
+            </div>
+            
+            <div class="dayOfWeek">{{ dow }}</div>
+
+            <div class="arrowContainer right" v-on:click="next_day">
+                <img class="arrow right" src="images/right-arrow.svg">
+            </div>
+        </div>
+    </template>
+
+    <template id="no-flights">
+        <div>
+            Sorry, but there are no flights available on that day.
+        </div>
+    </template>
+
+    <template id="flight-times">
+        <div class='flightRadio'>
+            <label>
+                <input type='radio' name='flight-time' v-on:change='select_time' v-bind:checked="flightSelected">
+                <div class='flightLabel'>Departs {{ flightTime }}</div>
+                <div class='flightPrice'>$158.00</div>
+            </label>
+        </div>
+    </template>
+
+    <template id='customer-info'>
+        <div class='custInfoBlock'>
+            <div class="passengerTitle">Passenger 1</div>
+            <div class='custInfoLine'>
+                <label>First Name</label>
+                <input type='text' name='firstName' id='custFirstName' v-model='firstName' v-on:input='update_customer' />
+            </div>
+            <div class='custInfoLine'>
+                <label>Last Name</label>
+                <input type='text' name='lastName' id='custLastName' v-model='lastName' v-on:input='update_customer' />
+            </div>
+            <div class='custInfoLine'>
+                <label>Phone</label>
+                <input type='text' name='phone' id='custPhone' v-model='phone' v-on:input='update_customer' />
+            </div>
+            <div class='custInfoLine'>
+                <label>Email</label>
+                <input type='text' name='email' id='custEmail' v-model='email' v-on:input='update_customer' />
+            </div>
+            <div class='custInfoLine'>
+                <label>Weight</label>
+                <input type='text' name='weight' id='custWeight' v-on:focus="showWarning" v-on:blur="hideWarning" v-model='weight' v-on:input='update_customer' /> 
+                <div class="popUpWarning hidePopup" >Weight Must Be Between 40lbs and 250lbs</div>
+            </div>
+        </div>
+    </template>
+
+    <template id='passenger-info'>
+        <div class='passengerBlock'>
+            <div class='passengerTitle'>Passenger {{ passid }}</div>
+            <div class='passengerLine'>
+                <label>Full Name</label>
+                <input type='text' v-on:input="update_passenger" v-model='name'>
+            </div>
+            <div class='passengerLine'>
+                <label>Weight</label>
+                <input type='text' v-on:input="update_passenger" v-on:focus="showWarning" v-on:blur="hideWarning" v-model='weight'>
+                <div class="popUpWarning hidePopup" >Weight Must Be Between 40lbs and 250lbs</div>
+            </div>
+        </div>
+    </template>
+
+    <template id='bookbutton'>
+        <div class='bookbutton'>
+            <button v-if='bookable' v-on:click="book">Book Your Flight</button>
+            <button v-else disabled>Book Your Flight</button>
+        </div>
+    </template>
+
+    <script src="js/reservation.js"></script>
+</body>
+</html>
