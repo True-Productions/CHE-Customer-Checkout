@@ -30,6 +30,7 @@
   "homepage": "https://github.com/True-Productions/CHE-Customer-Checkout#readme",
   "devDependencies": {
     "bulma": "^0.7.4",
+    "bulma-calendar": "^6.0.3",
     "node-sass": "^4.11.0",
     "vpm": "0.0.3",
     "vue": "^2.6.8",

@@ -31,6 +31,7 @@ $input-shadow: none;
 
 // Import only what you need from Bulma
 @import "../../../node_modules/bulma/bulma.sass";
+@import "../../../node_modules/bulma-calendar/dist/css/bulma-calendar.min.css";
 
-// Import Dashboard CSS
+// Import Customer CSS
 @import "body.scss";

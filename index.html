@@ -13,16 +13,29 @@
                 <div class="columns">
                     <div class="column" id="title">
                         <h2 class="is-pulled-left">Step <span class="number">1</span></h2>
-                    </div>
+                    <!-- end .column --></div>
                     <div class="column" id="disclaimer">
                         <a href="#" id="discount" class="disclaimer is-pulled-right">Have a voucher? REDEEM HERE</a>
-                    </div>
-                </div>
+                    <!-- end .column --></div>
+                <!-- end .columns --></div>
 
                 <div class="columns">
                     <div class="column">
                         <div class="container" id="inner-content">
-                            <div 
+                            <div class="columns">
+                                <div class="column">
+                                    <div class="passenger-count">
+                                        <h2><span class="number">4</span> <span class="text">Passengers</span></h2>
+                                        <span class="em">** Including yourself</span>
+                                    <!-- end .passenger-count --></div>
+                                <!-- end .column --></div>
+                                <div class="column">
+                                    <div class="buttons is-pulled-right">
+                                        <button class="btn">+</button>
+                                        <button class="btn">-</button>
+                                    </div>
+                                <!-- end .column --></div>
+                            <!-- end .columns --></div>
                         <!-- end #inner-content --></div>
                     <!-- end .column --></div>
                 <!-- end .columns --></div>
@@ -30,6 +43,18 @@
                     <div class="column">
                         <div class="container" id="inner-content">
 
+                            <div class="columns" id="top">
+                                <div class="column">
+                                    <h3 class="title">Pick a Date</h3>
+                                <!-- end .column --></div>
+                            <!-- end #top --></div>
+
+                            <div class="columns" id="calendar">
+                                <div class="column">
+                                    <input type="date" data-display-mode="inline" data-close-on-select="false">
+                                </div>
+                            </div>
+                            
                         <!-- end #inner-content --></div>
                     <!-- end .column --></div>
                 <!-- end .columns --></div>
@@ -41,16 +66,115 @@
                 <div class="columns">
                     <div class="column" id="title">
                         <h2 class="is-pulled-left">Step <span class="number">2</span></h2>
-                    </div>
+                    <!-- end .column --></div>
                     <div class="column" id="disclaimer">
                         <a href="#" id="discount" class="disclaimer is-pulled-right">Have a discount code? Apply at checkout.</a>
-                    </div>
-                </div>
+                    <!-- end .column --></div>
+                <!-- end .columns --></div>
 
                 <div class="columns">
                     <div class="column">
                         <div class="container" id="inner-content">
 
+                            <div class="columns" id="top">
+                                <div class="column">
+                                    <h3 class="title">Select Your Flight</h3>
+                                    <span class="info">Price per passenger. Total displayed at checkout.</span>
+
+                                    <div class="chosen-date">
+                                        <button class="btn is-pulled-left" id="back"><i class="caret"></i></button>
+                                        <div class="date"><time datetime="">Thursday, March 28, 2019</time></div>
+                                        <button class="btn is-pulled-right" id="forward"><i class="caret"></i></button>
+                                    </div>
+                                <!-- end .column --></div>
+                            <!-- end #top --></div>
+
+                            <div class="columns" id="flights">
+                                <div class="column">
+                                    <div class="flight container is-fluid" id="flight-set">
+
+                                        <div class="columns" id="flight-row">
+                                            <div class="flight-item column">
+                                                <label>
+                                                    <input type="radio" name="flight" class="radio" />
+                                                    <div class="label">Departs <time>11:15a</time></div>
+                                                    <div class="price">$159</div>
+                                                <!-- end label --></label>
+                                            <!-- end .flight-item --></div>
+
+                                            <div class="flight-item column">
+                                                <label>
+                                                    <input type="radio" name="flight" class="radio" />
+                                                    <div class="label">Departs <time>11:15a</time></div>
+                                                    <div class="price">$159</div>
+                                                <!-- end label --></label>
+                                            <!-- end .flight-item --></div>
+
+                                            <div class="flight-item column">
+                                                <label>
+                                                    <input type="radio" name="flight" class="radio" />
+                                                    <div class="label">Departs <time>11:15a</time></div>
+                                                    <div class="price">$159</div>
+                                                <!-- end label --></label>
+                                            <!-- end .flight-item --></div>
+                                        <!-- end #flight-row --></div>
+
+                                        <div class="columns" id="flight-row">
+                                            <div class="flight-item column">
+                                                <label>
+                                                    <input type="radio" name="flight" class="radio" />
+                                                    <div class="label">Departs <time>11:15a</time></div>
+                                                    <div class="price">$159</div>
+                                                <!-- end label --></label>
+                                            <!-- end .flight-item --></div>
+
+                                            <div class="flight-item column">
+                                                <label>
+                                                    <input type="radio" name="flight" class="radio" />
+                                                    <div class="label">Departs <time>11:15a</time></div>
+                                                    <div class="price">$159</div>
+                                                <!-- end label --></label>
+                                            <!-- end .flight-item --></div>
+
+                                            <div class="flight-item column">
+                                                <label>
+                                                    <input type="radio" name="flight" class="radio" />
+                                                    <div class="label">Departs <time>11:15a</time></div>
+                                                    <div class="price">$159</div>
+                                                <!-- end label --></label>
+                                            <!-- end .flight-item --></div>
+                                        <!-- end #flight-row --></div>
+
+                                        <div class="columns" id="flight-row">
+                                            <div class="flight-item column">
+                                                <label>
+                                                    <input type="radio" name="flight" class="radio" />
+                                                    <div class="label">Departs <time>11:15a</time></div>
+                                                    <div class="price">$159</div>
+                                                <!-- end label --></label>
+                                            <!-- end .flight-item --></div>
+
+                                            <div class="flight-item column">
+                                                <label>
+                                                    <input type="radio" name="flight" class="radio" />
+                                                    <div class="label">Departs <time>11:15a</time></div>
+                                                    <div class="price">$159</div>
+                                                <!-- end label --></label>
+                                            <!-- end .flight-item --></div>
+
+                                            <div class="flight-item column">
+                                                <label>
+                                                    <input type="radio" name="flight" class="radio" />
+                                                    <div class="label">Departs <time>11:15a</time></div>
+                                                    <div class="price">$159</div>
+                                                <!-- end label --></label>
+                                            <!-- end .flight-item --></div>
+                                        <!-- end #flight-row --></div>
+
+                                    <!-- end #flight-set --></div>
+                                <!-- end #flights --></div>
+                            <!-- end .columns --></div>
+                            
                         <!-- end #inner-content --></div>
                     <!-- end .column --></div>
                 <!-- end .columns --></div>
@@ -62,13 +186,92 @@
                 <div class="columns">
                     <div class="column" id="title">
                         <h2 class="is-pulled-left">Step <span class="number">3</span></h2>
-                    </div>
-                </div>
+                    <!-- end .column --></div>
+                <!-- end .columns --></div>
                 
                 <div class="columns">
                     <div class="column">
                         <div class="container" id="inner-content">
 
+                            <div class="inner-section" id="passenger">
+                                <h3>Passenger 1 - Info (Designated Contact)</h3>
+                                <div class="columns" id="passenger-set">
+                                    <div class="column is-half">
+                                        <input value="" type="text" placeholder="First Name*" class="input" required />
+                                        <input value="" type="text" placeholder="Email*" class="input" required />
+                                        <input value="" type="text" placeholder="Mobile Number" class="input" required />
+                                    <!-- end .column --></div>
+                                    <div class="column is-half">
+                                        <input value="" type="text" placeholder="Last Name*" class="input" required />
+                                        <input value="" type="text" placeholder="Confirm Email*" class="input" required />
+                                        <input value="" type="text" placeholder="Weight (lbs.)*" class="input" required />
+                                    <!-- end .column --></div>
+                                <!-- end #passenger-set --></div>
+                            <!-- end .inner-section --></div>
+
+                            <div class="inner-section" id="passenger">
+                                <h3>Passenger 2 - Info</h3>
+                                <div class="columns" id="passenger-set">
+                                    <div class="column is-half">
+                                        <input value="" type="text" placeholder="First Name*" class="input" required />
+                                        <input value="" type="text" placeholder="Weight (lbs.)*" class="input" required />
+                                    <!-- end .column --></div>
+                                    <div class="column is-half">
+                                        <input value="" type="text" placeholder="Last Name*" class="input" required />
+                                    <!-- end .column --></div>
+                                <!-- end #passenger-set --></div>
+                            <!-- end .inner-section --></div>
+
+                            <div class="inner-section" id="passenger">
+                                <h3>Passenger 3 - Info</h3>
+                                <div class="columns" id="passenger-set">
+                                    <div class="column is-half">
+                                        <input value="" type="text" placeholder="First Name*" class="input" required />
+                                        <input value="" type="text" placeholder="Weight (lbs.)*" class="input" required />
+                                    <!-- end .column --></div>
+                                    <div class="column is-half">
+                                        <input value="" type="text" placeholder="Last Name*" class="input" required />
+                                    <!-- end .column --></div>
+                                <!-- end #passenger-set --></div>
+                            <!-- end .inner-section --></div>
+
+                            <div class="inner-section" id="passenger">
+                                <h3>Passenger 4 - Info</h3>
+                                <div class="columns" id="passenger-set">
+                                    <div class="column is-half">
+                                        <input value="" type="text" placeholder="First Name*" class="input" required />
+                                        <input value="" type="text" placeholder="Weight (lbs.)*" class="input" required />
+                                    <!-- end .column --></div>
+                                    <div class="column is-half">
+                                        <input value="" type="text" placeholder="Last Name*" class="input" required />
+                                    <!-- end .column --></div>
+                                <!-- end #passenger-set --></div>
+                            <!-- end .inner-section --></div>
+
+                            <div class="inner-section" id="terms">
+                                <div class="columns">
+                                    <div class="column">
+                                        <strong>Booking Terms and Conditions:</strong>
+                                        <ul class="terms-list">
+                                            <li>You must arrive at least 30 minutes before your departure time. All flights depart on time and if you do not check-in at least 30 minutes prior, you will be charged the full amount of your reservation.</li>
+                                            <li>The individual weights provided must be within 15lbs of the acutal weight taken at your time of check-in.</li>
+                                            <li>All passengers over the age of 16 must have a valid photo ID.</li>
+                                            <li>Children under 16 years of age old must be accompanied by an adult. Children must be at 3 years old to fly.</li>
+                                            <li>Intoxicated passengers will not be allowed to fly.</li>
+                                            <li>We reserve the right to adjust seating assignments based on weight, balance and emergency procedures.</li>
+                                            <li>It is your responsibility to notify Chicago Heliopter Experience with any changes to your reservations prior to arrival.</li>
+                                        <!-- end .terms-list --></ul>
+
+                                        <div class="check" id="agree">
+                                            <label class="checkbox">
+                                                <input type="checkbox" name="agreement">
+                                                <span class="text">I agree to the terms and conditions stated above.</span>
+                                            </label>
+                                        </div>
+                                    <!-- end .column --></div>
+                                <!-- end .columns --></div>
+                            <!-- end #terms --></div>
+                            
                         <!-- end #inner-content --></div>
                     <!-- end .column --></div>
                 <!-- end .columns --></div>
@@ -83,6 +286,7 @@
         
     <!-- end #content --></main>
 
+    <script type="text/javascript" src="./node_modules/bulma-calendar/dist/js/bulma-calendar.min.js"></script>
     <script type="text/javascript" src="./assets/js/lib/site.js"></script>
 
 </body>
