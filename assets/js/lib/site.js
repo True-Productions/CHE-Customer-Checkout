@@ -20,4 +20,15 @@
         });
     }
 
+    var currDate = new Date();
+    console.log(currDate);
+    var dateClass = document.querySelectorAll('.datepicker-days .datepicker-date');
+    for (var i = 0; i < dateClass.length; i++) {
+        var dataDate = dateClass[i].getAttribute('data-date');
+        var prevDate = (currDate.getTime() < dataDate);
+        if (prevDate) {
+            console.log(dataDate);
+        }
+    }
+
 })();

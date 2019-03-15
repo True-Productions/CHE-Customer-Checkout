@@ -6518,8 +6518,14 @@ html, body {
       #content #step1 #calendar .datetimepicker .datepicker-nav .datepicker-nav-year {
         color: #0076BF;
         font-weight: normal; }
+      #content #step1 #calendar .datetimepicker .datepicker-nav .button {
+        font-size: 1rem;
+        padding: 0;
+        border: 0; }
       #content #step1 #calendar .datetimepicker .datepicker-nav svg {
-        stroke: none; }
+        stroke: none;
+        width: 1rem;
+        height: 2rem; }
         #content #step1 #calendar .datetimepicker .datepicker-nav svg polyline {
           fill: #0076BF; }
     #content #step1 #calendar .datetimepicker .datepicker-weekdays .datepicker-date {
@@ -6529,6 +6535,39 @@ html, body {
       font-weight: bold; }
       #content #step1 #calendar .datetimepicker .datepicker-weekdays .datepicker-date .date-item.is-today {
         border: none; }
+    #content #step1 #calendar .datetimepicker .datepicker-days .datepicker-date {
+      margin: .5rem 0;
+      visibility: hidden;
+      background-color: transparent; }
+      #content #step1 #calendar .datetimepicker .datepicker-days .datepicker-date .date-item {
+        padding: 1rem;
+        font-size: 16px;
+        line-height: 1;
+        width: 3rem;
+        height: 3rem;
+        background-color: #0076BF;
+        color: #FFFFFF;
+        border-radius: 10px; }
+      #content #step1 #calendar .datetimepicker .datepicker-days .datepicker-date .date-item:hover {
+        border: none;
+        background-color: #FF2021; }
+      #content #step1 #calendar .datetimepicker .datepicker-days .datepicker-date .date-item.is-today {
+        border: none; }
+      #content #step1 #calendar .datetimepicker .datepicker-days .datepicker-date .date-item.is-active {
+        background-color: #FF2021; }
+    #content #step1 #calendar .datetimepicker .datepicker-days .datepicker-date.is-past-date {
+      cursor: default;
+      pointer-events: none; }
+      #content #step1 #calendar .datetimepicker .datepicker-days .datepicker-date.is-past-date button {
+        background-color: #C8C8C8;
+        cursor: default;
+        pointer-events: none; }
+    #content #step1 #calendar .datetimepicker .datepicker-days .datepicker-date.is-current-month {
+      visibility: visible; }
+    #content #step1 #calendar .datetimepicker .datepicker-days .datepicker-date.is-active {
+      background-color: #FF2021; }
+    #content #step1 #calendar .datetimepicker .datetimepicker-footer {
+      display: none; }
   #content #step2 #top {
     text-transform: none;
     text-align: center;
@@ -6544,7 +6583,8 @@ html, body {
       align-items: center; }
     #content #step2 #top .btn {
       padding: 20px;
-      margin-left: 0; }
+      margin-left: 0;
+      background-color: transparent; }
       #content #step2 #top .btn .caret {
         border: solid transparent;
         content: '';
